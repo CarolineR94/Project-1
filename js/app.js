@@ -1,5 +1,7 @@
 $(function(){
 
+  let currentQuestion = 1;
+
   const $firstpage = $('.firstpage');
   const $question1 = $('.question1');
   const $question2 = $('.question2');
@@ -48,11 +50,8 @@ $(function(){
 
 
   // starting page select lang
-
-  $question1.add($question2).add($question3).add($question4).hide();
-  $modalcorrect1.add($modalcorrect2).add($modalcorrect3).add($modalcorrect4).hide();
-  $modalincorrect1.add($modalincorrect2).add($modalincorrect3).add($modalincorrect4).hide();
-
+  $(".question, .modal ").hide();
+  
   // show first french question
 
   $imagefr.on('click', function (){

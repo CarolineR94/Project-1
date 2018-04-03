@@ -4,7 +4,6 @@
 @import "bulma/sass/utilities/functions";
 
 
-
 /* add your customization here... */
 
 $seablue: #006E90;
@@ -13,21 +12,17 @@ $pastelblue: #ADCAD6;
 $androidgreen: #99C24D;
 $pictonblue: #41BBD9;
 $lightcyan: #DFF8EB;
+$complement: #F7F7DF;
 
 $box-background-color: $lightcyan;
-$modal-content-width: 400px;
-
-
 
 
 @import "bulma/bulma.scss";
 
 
 
-
 #firstpagebox{
   margin: 5%;
-  border: 2px solid $seablue;
 }
 
 .card{
@@ -65,4 +60,165 @@ p.is-size-2{
 
 #incorrect-back-button1, #incorrect-back-button2, #incorrect-back-button3, #incorrect-back-button4{
   border: 2px solid red;
+}
+
+#droparea{
+  background-color: #F7F7DF;
+}
+
+
+// animation
+
+
+.swing-in-top-fwd {
+	-webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+
+
+.swing-in-right-fwd {
+	-webkit-animation: swing-in-right-fwd 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-right-fwd 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+@-webkit-keyframes swing-in-right-fwd {
+  0% {
+    -webkit-transform: rotateY(-100deg);
+            transform: rotateY(-100deg);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-right-fwd {
+  0% {
+    -webkit-transform: rotateY(-100deg);
+            transform: rotateY(-100deg);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    opacity: 1;
+  }
+}
+
+.swing-in-bottom-bck {
+	-webkit-animation: swing-in-bottom-bck 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-bottom-bck 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+@-webkit-keyframes swing-in-bottom-bck {
+  0% {
+    -webkit-transform: rotateX(-70deg);
+            transform: rotateX(-70deg);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-bottom-bck {
+  0% {
+    -webkit-transform: rotateX(-70deg);
+            transform: rotateX(-70deg);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    opacity: 1;
+  }
+}
+
+.swing-in-left-bck {
+	-webkit-animation: swing-in-left-bck 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-left-bck 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+@-webkit-keyframes swing-in-left-bck {
+  0% {
+    -webkit-transform: rotateY(-70deg);
+            transform: rotateY(-70deg);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-left-bck {
+  0% {
+    -webkit-transform: rotateY(-70deg);
+            transform: rotateY(-70deg);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    opacity: 1;
+  }
 }
