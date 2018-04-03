@@ -1,5 +1,6 @@
-const questionsFrench = [
+const questionsFr = [
   {
+    type: 'image',
     question: 'Clique sur l\'image correcte.',
     answer: 'Le chien:',
     options: [
@@ -23,6 +24,35 @@ const questionsFrench = [
     options: [
       'Mon', 'animal', 'préféré', 'est', 'un', 'lapin.'
     ]}
-
-
 ];
+
+const modalsFr = [
+  {
+    correct: 'Très bien!',
+    incorrect: 'Attention!',
+    options: [
+      'Continue', 'Retour'
+    ]
+  }
+  {
+    correct: 'Excellent!',
+    incorrect: 'Essaie encore!',
+    options: [
+      'Continue', 'Retour'
+    ]
+  }
+  {
+    correct: 'Génial!',
+    incorrect: 'Essaie encore!',
+    options: [
+      'Continue', 'Retour'
+    ]
+  }
+  {
+    correct: 'Parfait - 100%!',
+    incorrect: 'Oups!',
+    options: [
+      'Continue', 'Retour'
+    ]
+  }
+]
