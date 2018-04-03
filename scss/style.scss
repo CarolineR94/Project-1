@@ -1,0 +1,68 @@
+// sass --watch scss/style.scss:css/style.css
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+
+
+
+/* add your customization here... */
+
+$seablue: #006E90;
+$tangerine: #F18F01;
+$pastelblue: #ADCAD6;
+$androidgreen: #99C24D;
+$pictonblue: #41BBD9;
+$lightcyan: #DFF8EB;
+
+$box-background-color: $lightcyan;
+$modal-content-width: 400px;
+
+
+
+
+@import "bulma/bulma.scss";
+
+
+
+
+#firstpagebox{
+  margin: 5%;
+  border: 2px solid $seablue;
+}
+
+.card{
+  margin: 20% 0;
+}
+
+p.is-size-2{
+  width: 100%;
+  text-align: center;
+}
+
+.card-footer{
+  border: 2px solid $seablue;
+  border-radius: $radius-large;
+}
+
+
+.box {
+  border: 2px solid $seablue;
+  margin: 5%;
+}
+
+
+.choiceimage1, .choiceimage2, .choiceimage3{
+  padding: 20px;
+}
+
+.checkbutton1, .checkbutton2, .checkbutton3, .checkbutton4{
+  border: 2px solid $seablue;
+}
+
+#correct-continue-button1, #correct-continue-button2, #correct-continue-button3, #correct-continue-button4{
+  border: 2px solid $androidgreen;
+}
+
+#incorrect-back-button1, #incorrect-back-button2, #incorrect-back-button3, #incorrect-back-button4{
+  border: 2px solid red;
+}

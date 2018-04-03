@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"> -->
+    <title>Languages Game</title>
+  </head>
+
+  <body>
+
+    <div class="firstpage">
+      <div id="firstpagebox"class="box">
+        <nav class=level>
+          <div class="level-item">
+            <div class="card">
+              <div class="card-image">
+                <figure class="imagefr is-218x145">
+                  <img src="../images/french-flag.png" alt="French flag">
+                </figure>
+              </div>
+              <div class="card-footer">
+                <p class="is-size-2">Français</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="level-item">
+            <div class="card">
+              <div class="card-image">
+                <figure class="imageit is-218x145">
+                  <img src="../images/italy-flag.png" alt="Italian flag">
+                </figure>
+              </div>
+              <div class="card-footer">
+                <p class="is-size-2">Italiano</p>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+    </div>
+
+
+
+<!-- question 1 -->
+
+    <div class="question1">
+      <div class="box">
+        <nav class="level">
+          <div class="level-item has-text-centered">
+            <p class="question-one subtitle is-3">Clique sur l'image correcte.</p>
+          </div>
+        </nav>
+
+        <nav class="level">
+          <div class="level-item has-text-centered">
+            <p class="question-one-text subtitle is-4">Le chien:</p>
+          </div>
+        </nav>
+
+        <nav class="level">
+          <div class="level-item has-text-centered choiceimages">
+            <figure class="image is-200x200 choiceimage1">
+              <img src="../images/cat.jpeg" alt="cat">
+            </figure>
+            <figure class="image is-200x200 choiceimage2">
+              <img src="../images/dog.jpeg" alt="dog">
+            </figure>
+            <figure class="image is-200x200 choiceimage3">
+              <img src="../images/mouse.jpeg" alt="mouse">
+            </figure>
+          </div>
+        </nav>
+
+        <nav class="level">
+          <div class="level-item">
+            <button class="button is-large checkbutton1">Vérifie!</button>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+
+    <div class="modal modalcorrect1">
+      <div class="modal-background"></div>
+        <div class="modal-card">
+          <section class="modal-card-head">
+            <p>Très bien!</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="correct-continue-button1" class="button">Continue</button>
+          </footer>
+      </div>
+    </div>
+
+    <div class="modal modalincorrect1">
+      <div class="modal-background"></div>
+        <div class="modal-card">
+          <section class="modal-card-head">
+            <p>Attention!</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="incorrect-back-button1" class="button">Retour</button>
+          </footer>
+      </div>
+    </div>
+
+
+<!-- question 2 -->
+
+
+    <div class="question2 box">
+      <nav class="level">
+        <div class="level-item has-text-centered subtitle is-3">
+          <p>Écoute et écris la phrase.</p>
+        </div>
+        <div class="level-item">
+          <audio controls src="../sounds/frquestion2.mp3"></audio>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div class="field">
+            <div class="control">
+              <input class="input is-large input2" type="text">
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item">
+          <button class="button checkbutton2 is-large">Vérifie!</button>
+        </div>
+      </nav>
+    </div>
+
+    <div class="modalcorrect2">
+      <div class="modal-background"></div>
+        <div class="modal-card">
+          <section class="modal-card-head">
+            <p>Excellent!</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="correct-continue-button2" class="button">Continue</button>
+          </footer>
+      </div>
+    </div>
+
+    <div class="modalincorrect2">
+      <div class="modal-background"></div>
+        <div class="modal-card">
+          <section class="modal-card-head">
+            <p>Essaie encore!</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="incorrect-back-button2" class="button">Retour</button>
+          </footer>
+      </div>
+    </div>
+
+
+<!-- question 3 -->
+
+
+    <div class="question3 box">
+      <nav class="level">
+        <div class="level-item subtitle is-3">
+          <p>Traduis cette phrase.</p>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item subtitle is-4">
+          <p>Je n'aime pas les serpents.</p>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item">
+          <div class="field">
+            <div class="control">
+              <input class="input is-large input3" type="text">
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item">
+          <button class="button checkbutton3 is-large">Vérifie!</button>
+        </div>
+      </nav>
+    </div>
+
+    <div class="modalcorrect3">
+      <div class="modal-background"></div>
+        <div class="modal-card">
+          <section class="modal-card-head">
+            <p>Génial!</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="correct-continue-button3" class="button">Continue</button>
+          </footer>
+      </div>
+    </div>
+
+    <div class="modalincorrect3">
+      <div class="modal-background"></div>
+        <div class="modal-card">
+          <section class="modal-card-head">
+            <p>Essaie encore!</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="incorrect-back-button3" class="button">Retour</button>
+          </footer>
+      </div>
+    </div>
+
+
+<!-- question 4 -->
+
+  <div class="question4 box">
+    <nav class="level">
+      <div class="level-item subtitle is-3">
+        <p>Mets les mots dans l'ordre correct.</p>
+      </div>
+    </nav>
+
+    <nav class="level">
+      <div class="level-item">
+        <div id="droparea"class="box">
+        </div>
+      </div>
+    </nav>
+
+    <nav class="level">
+      <div class="level-item">
+        <button id="word1"class="button is-medium words">est</button>
+        <button id="word2"class="button is-medium words">Mon</button>
+        <button id="word3"class="button is-medium words">préféré</button>
+        <button id="word4"class="button is-medium words">lapin.</button>
+        <button id="word5"class="button is-medium words">animal</button>
+        <button id="word6"class="button is-medium words">un</button>
+      </div>
+    </nav>
+
+    <nav class="level">
+      <div class="level-item">
+        <button class="button checkbutton4 is-large">Vérifie!</button>
+      </div>
+    </nav>
+  </div>
+
+  <div class="modalcorrect4">
+    <div class="modal-background"></div>
+      <div class="modal-card">
+        <section class="modal-card-head">
+          <p>Parfait! 100%!</p>
+        </section>
+        <footer class="modal-card-foot">
+          <button id="correct-continue-button4" class="button">Finis</button>
+        </footer>
+    </div>
+  </div>
+
+  <div class="modalincorrect4">
+    <div class="modal-background"></div>
+      <div class="modal-card">
+        <section class="modal-card-head">
+          <p>Oups!</p>
+        </section>
+        <footer class="modal-card-foot">
+          <button id="incorrect-back-button4" class="button">Retour</button>
+        </footer>
+    </div>
+  </div>
+
+  </body>
+</html>
