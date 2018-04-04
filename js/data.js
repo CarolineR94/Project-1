@@ -12,49 +12,30 @@ const questionsFr = [
     correctModal: 'Très bien!',
     incorrectModal: 'Attention!'
   },
+
   {
     type: 'audio-text',
     question: 'Écoute et écris la phrase.',
     audioFile: 'frquestion2.mp3',
     rightAnswer: 'Je n\'aime pas les serpents.',
-    correctModal: 'Très bien!',
-    incorrectModal: 'Attention!'},
+    correctModal: 'Génial!',
+    incorrectModal: 'Essaie encore!'},
+
   {
     type: 'translate',
     question: 'Traduis cette phrase.',
-    rightAnsweranswer: 'I don\'t like snakes.',
-    correctModal: 'Très bien!',
-    incorrectModal: 'Attention!'},
+    rightAnswer: 'I don\'t like snakes.',
+    correctModal: 'Excellent!',
+    incorrectModal: 'Essaie encore!'},
+
+
   {
     type: 'word-order',
     question: 'Mets les mots dans l\'ordre correct.',
-    rightAnswer: 'Mon animal préféré est un lapin.',
     options: [
       'Mon', 'animal', 'préféré', 'est', 'un', 'lapin.'
-    ]}
-];
-
-const modalsFr = [
-
-  {
-    correct: 'Excellent!',
-    incorrect: 'Essaie encore!',
-    options: [
-      'Continue', 'Retour'
-    ]
-  },
-  {
-    correct: 'Génial!',
-    incorrect: 'Essaie encore!',
-    options: [
-      'Continue', 'Retour'
-    ]
-  },
-  {
-    correct: 'Parfait - 100%!',
-    incorrect: 'Oups!',
-    options: [
-      'Continue', 'Retour'
-    ]
-  }
+    ],
+    rightAnswer: 'Mon animal préféré est un lapin.',
+    correctModal: 'Parfait - 100%!',
+    incorrectModal: 'Oups!'}
 ];

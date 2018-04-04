@@ -64,47 +64,47 @@ $(function(){
     }
   }
 
-
-  function showQuestionImage(currentQuestion){
-    console.log(currentQuestion);
-    const $template = $('.question-image-template');
-    console.log($template.children('.instructions'));
-    $template.find('.instructions').text(currentQuestion.question);
-    $template.find('.answer').text(currentQuestion.answer);
-    $(currentQuestion.options).each(function(i, animal){
-      $template.find('.choiceimages').append(`
-        <figure class="image is-200x200 choiceimage" data-choice='${animal}'>
-          <img src="../images/${animal}.jpeg" alt="${animal}">
-        </figure>`);
-    });
-    $template.find('.checkbutton').hide();
-    $template.on('click', '.choiceimage', function(){
-      choice = $(this).data('choice');
-      console.log(choice);
-      $template.find('.checkbutton').show();
-    });
-
-    $template.on('click', '.checkbutton', function(){
-      if(choice === currentQuestion.rightAnswer){
-        $('.answer-modal p').text(currentQuestion.correctModal);
-      } else{
-        $('.answer-modal p').text(currentQuestion.incorrectModal);
-      }
-      $('.answer-modal').show();
-      $('.close-modal').on('click', function(){
-        $('.answer-modal').hide();
-        if(choice === currentQuestion.rightAnswer){
-          currentQuestionNumber++;
-          showQuestion(currentQuestionNumber);
-        }
-      });
-    });
-
-    $('.question-image-template').show();
-
-    return $template;
-  }
-
+  //
+  // function showQuestionImage(currentQuestion){
+  //   console.log(currentQuestion);
+  //   const $template = $('.question-image-template');
+  //   console.log($template.children('.instructions'));
+  //   $template.find('.instructions').text(currentQuestion.question);
+  //   $template.find('.answer').text(currentQuestion.answer);
+  //   $(currentQuestion.options).each(function(i, animal){
+  //     $template.find('.choiceimages').append(`
+  //       <figure class="image is-200x200 choiceimage" data-choice='${animal}'>
+  //         <img src="../images/${animal}.jpeg" alt="${animal}">
+  //       </figure>`);
+  //   });
+  //   $template.find('.checkbutton').hide();
+  //   $template.on('click', '.choiceimage', function(){
+  //     choice = $(this).data('choice');
+  //     console.log(choice);
+  //     $template.find('.checkbutton').show();
+  //   });
+  //
+  //   $template.on('click', '.checkbutton', function(){
+  //     if(choice === currentQuestion.rightAnswer){
+  //       $('.answer-modal p').text(currentQuestion.correctModal);
+  //     } else{
+  //       $('.answer-modal p').text(currentQuestion.incorrectModal);
+  //     }
+  //     $('.answer-modal').show();
+  //     $('.close-modal').on('click', function(){
+  //       $('.answer-modal').hide();
+  //       if(choice === currentQuestion.rightAnswer){
+  //         currentQuestionNumber++;
+  //         showQuestion(currentQuestionNumber);
+  //       }
+  //     });
+  //   });
+  //
+  //   $('.question-image-template').show();
+  //
+  //   return $template;
+  // }
+  //
 
   function showQuestionAudioText(currentQuestion){
     console.log(currentQuestion);
@@ -173,8 +173,7 @@ $(function(){
 
   function showQuestionWordOrder(currentQuestion){
     const $template = $('.question-word-order-template');
-    $template.find('.instructions').text(currentQuestionData.question);
-    $template.find('.answer').text(currentQuestionData.answer);
+    $template.find('.instructions').text(currentQuestion.question);
     $template.find('.words').append(
       // const numberOfWords = (answer.val().split(/[\s\.,;]+/)).length;
       // numberOfButtons = numberOfWords
@@ -184,10 +183,10 @@ $(function(){
       <button id="word4"class="button is-medium words">lapin.</button>
       <button id="word5"class="button is-medium words">animal</button>
       <button id="word6"class="button is-medium words">un</button>`
-      );
+    );
 
     return $template;
-  },
+  }
 
 
 
