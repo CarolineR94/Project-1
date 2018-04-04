@@ -6429,6 +6429,10 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
+.body {
+  background-color: #DFF8EB;
+  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png"); }
+
 #firstpagebox {
   margin: 5%; }
 
@@ -6441,7 +6445,11 @@ p.is-size-2 {
 
 .card-footer {
   border: 2px solid #006E90;
-  border-radius: 5px; }
+  border-radius: 5px;
+  background-color: #F7F7DF; }
+
+.button {
+  background-color: #F7F7DF; }
 
 .box {
   border: 2px solid #006E90;
@@ -6463,8 +6471,8 @@ p.is-size-2 {
   background-color: #F7F7DF; }
 
 .swing-in-top-fwd {
-  -webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+  -webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
 
 @-webkit-keyframes swing-in-top-fwd {
   0% {
@@ -6523,8 +6531,8 @@ p.is-size-2 {
     transform-origin: right;
     opacity: 1; } }
 .swing-in-bottom-bck {
-  -webkit-animation: swing-in-bottom-bck 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation: swing-in-bottom-bck 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+  -webkit-animation: swing-in-bottom-bck 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-bottom-bck 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
 
 @-webkit-keyframes swing-in-bottom-bck {
   0% {
@@ -6553,8 +6561,8 @@ p.is-size-2 {
     transform-origin: bottom;
     opacity: 1; } }
 .swing-in-left-bck {
-  -webkit-animation: swing-in-left-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation: swing-in-left-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+  -webkit-animation: swing-in-left-bck 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-left-bck 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
 
 @-webkit-keyframes swing-in-left-bck {
   0% {

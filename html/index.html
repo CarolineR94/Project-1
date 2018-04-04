@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/data.js"></script>
     <script type="text/javascript" src="../js/app.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -12,6 +13,19 @@
   </head>
 
   <body>
+
+    <div class="modal answer-modal">
+      <div class="modal-background"></div>
+        <div class="modal-card">
+          <section class="modal-card-head">
+            <p>Excellent!</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button  class="button close-modal">Continue</button>
+          </footer>
+      </div>
+    </div>
+
 
     <div class="firstpage">
       <div id="firstpagebox"class="box">
@@ -47,10 +61,150 @@
     </div>
 
 
+<!-- question-image-template -->
+<div class="question question-image-template box swing-in-top-fwd">
+  <nav class="level">
+    <div class="level-item has-text-centered">
+      <p class="instructions subtitle is-3"></p>
+    </div>
+  </nav>
+
+  <nav class="level">
+    <div class="level-item has-text-centered">
+      <p class="answer subtitle is-4"></p>
+    </div>
+  </nav>
+
+  <nav class="level">
+    <div class="level-item has-text-centered choiceimages">
+
+    </div>
+  </nav>
+
+  <nav class="level">
+    <div class="level-item">
+      <button class="button is-large checkbutton">Vérifie!</button>
+    </div>
+  </nav>
+</div>
+<!-- end question-image-template -->
+
+
+
+
+
+<!-- question-audio-text-template -->
+
+<div class="question box swing-in-right-fwd">
+  <nav class="level">
+    <div class="question instructions level-item has-text-centered">
+      <p class="subtitle is-3"></p>
+    </div>
+    <div class="level-item sounds">
+    </div>
+  </nav>
+
+  <nav class="level">
+    <div class="level-item has-text-centered">
+      <div class="field">
+        <div class="control">
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="level">
+    <div class="level-item">
+      <button class="button checkbutton is-large">Vérifie!</button>
+    </div>
+  </nav>
+</div>
+
+<!-- end question-audio-text-template -->
+
+
+
+
+<!-- question-translate-template -->
+
+
+    <div class="question instructions question-translate-template box swing-in-bottom-bck">
+      <nav class="level">
+        <div class="level-item subtitle is-3">
+          <p></p>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item subtitle is-4">
+          <p class="answer"></p>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item">
+          <div class="field">
+            <div class="control">
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item">
+          <button class="button checkbutton3 is-large">Vérifie!</button>
+        </div>
+      </nav>
+    </div>
+
+
+
+<!-- end question-translate-template -->
+
+
+
+<!-- question-word-order-template -->
+
+<div class="question box swing-in-left-bck">
+  <nav class="level">
+    <div class="instructions level-item subtitle is-3">
+      <p></p>
+    </div>
+  </nav>
+
+  <nav class="level">
+    <div class="level-item">
+      <div id="droparea"class="box answer">
+      </div>
+    </div>
+  </nav>
+
+  <nav class="level words">
+    <div class="level-item">
+    </div>
+  </nav>
+
+  <nav class="level">
+    <div class="level-item">
+      <button class="button checkbutton4 is-large">Vérifie!</button>
+    </div>
+  </nav>
+</div>
+
+
+<!-- end question-word-order-template -->
+
+
+
+
+<div class="mainContainerForAllQuestions">
+
+</div>
 
 <!-- question 1 -->
 
-    <div class="question question1 box swing-in-top-fwd">
+    <!-- <div class="question question1 box swing-in-top-fwd">
       <nav class="level">
         <div class="level-item has-text-centered">
           <p class="question-one subtitle is-3">Clique sur l'image correcte.</p>
@@ -110,10 +264,10 @@
     </div>
 
 
-<!-- question 2 -->
+question 2 -->
 
 
-    <div class="question question2 box swing-in-right-fwd">
+    <!-- <div class="question question2 box swing-in-right-fwd">
       <nav class="level">
         <div class="level-item has-text-centered subtitle is-3">
           <p>Écoute et écris la phrase.</p>
@@ -162,12 +316,12 @@
             <button id="incorrect-back-button2" class="button">Retour</button>
           </footer>
       </div>
-    </div>
+    </div> -->
 
 
 <!-- question 3 -->
 
-
+<!--
     <div class="question question3 box swing-in-bottom-bck">
       <nav class="level">
         <div class="level-item subtitle is-3">
@@ -221,11 +375,11 @@
           </footer>
       </div>
     </div>
-
+ -->
 
 <!-- question 4 -->
 
-  <div class="question question4 box swing-in-left-bck">
+  <!-- <div class="question question4 box swing-in-left-bck">
     <nav class="level">
       <div class="level-item subtitle is-3">
         <p>Mets les mots dans l'ordre correct.</p>
@@ -279,7 +433,7 @@
           <button id="incorrect-back-button4" class="button">Retour</button>
         </footer>
     </div>
-  </div>
+  </div> -->
 
   </body>
 </html>

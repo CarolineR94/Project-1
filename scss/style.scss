@@ -19,7 +19,10 @@ $box-background-color: $lightcyan;
 
 @import "bulma/bulma.scss";
 
-
+.body{
+  background-color: $lightcyan;
+  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+}
 
 #firstpagebox{
   margin: 5%;
@@ -37,8 +40,13 @@ p.is-size-2{
 .card-footer{
   border: 2px solid $seablue;
   border-radius: $radius-large;
+  background-color: $complement;
 }
 
+.button{
+  background-color: $complement;
+
+}
 
 .box {
   border: 2px solid $seablue;
@@ -71,8 +79,8 @@ p.is-size-2{
 
 
 .swing-in-top-fwd {
-	-webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-	        animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	-webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
 
 
@@ -149,8 +157,8 @@ p.is-size-2{
 }
 
 .swing-in-bottom-bck {
-	-webkit-animation: swing-in-bottom-bck 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-	        animation: swing-in-bottom-bck 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	-webkit-animation: swing-in-bottom-bck 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-bottom-bck 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
 
 @-webkit-keyframes swing-in-bottom-bck {
@@ -187,8 +195,8 @@ p.is-size-2{
 }
 
 .swing-in-left-bck {
-	-webkit-animation: swing-in-left-bck 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-	        animation: swing-in-left-bck 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	-webkit-animation: swing-in-left-bck 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-left-bck 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
 @-webkit-keyframes swing-in-left-bck {
   0% {
