@@ -95,12 +95,14 @@
 
 <!-- question-audio-text-template -->
 
-<div class="question box swing-in-right-fwd">
+<div class="question box question-audio-text-template swing-in-right-fwd">
   <nav class="level">
-    <div class="question level-item has-text-centered">
+    <div class="level-item has-text-centered">
       <p class="instructions subtitle is-3"></p>
     </div>
+
     <div class="level-item sounds">
+      <audio controls src=""></audio>
     </div>
   </nav>
 
@@ -108,7 +110,7 @@
     <div class="level-item has-text-centered">
       <div class="field">
         <div class="control">
-
+          <input class="input is-large" type="text">
         </div>
       </div>
     </div>
@@ -129,10 +131,10 @@
 <!-- question-translate-template -->
 
 
-    <div class="question instructions question-translate-template box swing-in-bottom-bck">
+    <div class="question question-translate-template box swing-in-bottom-bck">
       <nav class="level">
         <div class="level-item subtitle is-3">
-          <p></p>
+          <p class="instructions"></p>
         </div>
       </nav>
 
@@ -146,6 +148,7 @@
         <div class="level-item">
           <div class="field">
             <div class="control">
+              <input class="input is-large" type="text">
             </div>
           </div>
         </div>
@@ -153,7 +156,7 @@
 
       <nav class="level">
         <div class="level-item">
-          <button class="button checkbutton3 is-large">Vérifie!</button>
+          <button class="button checkbutton is-large">Vérifie!</button>
         </div>
       </nav>
     </div>
@@ -168,8 +171,8 @@
 
 <div class="question box swing-in-left-bck">
   <nav class="level">
-    <div class="instructions level-item subtitle is-3">
-      <p></p>
+    <div class="level-item subtitle is-3">
+      <p class="instructions"></p>
     </div>
   </nav>
 
@@ -187,7 +190,7 @@
 
   <nav class="level">
     <div class="level-item">
-      <button class="button checkbutton4 is-large">Vérifie!</button>
+      <button class="button checkbutton is-large">Vérifie!</button>
     </div>
   </nav>
 </div>

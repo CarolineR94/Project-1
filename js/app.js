@@ -51,75 +51,52 @@ $(function(){
   // const $word5 = $('#word5');
   // const $word6 = $('#word6');
 
-  var answer = questionsFr[0];
-  console.log(answer);
 
+  // SHOW QUESTIONS
 
   function showQuestion(questionId){
     const currentQuestion = questionsFr[questionId];
-    console.log(currentQuestion.type === 'image');
+    // console.log(currentQuestion);
     if(currentQuestion.type === 'image'){
       const $template = showQuestionImage(currentQuestion);
+      $('.mainContainerForAllQuestions').html($template);
+    } else if(currentQuestion.type === 'audio-text'){
+      const $template = showQuestionAudioText(currentQuestion);
+      $('.mainContainerForAllQuestions').html($template);
+    } else if(currentQuestion.type === 'translate'){
+      const $template = showQuestionTranslate(currentQuestion);
+      $('.mainContainerForAllQuestions').html($template);
+    } else if(currentQuestion.type === 'word-order'){
+      const $template = showQuestionWordOrder(currentQuestion);
       $('.mainContainerForAllQuestions').html($template);
     }
   }
 
-  //
-  // function showQuestionImage(currentQuestion){
-  //   console.log(currentQuestion);
-  //   const $template = $('.question-image-template');
-  //   console.log($template.children('.instructions'));
-  //   $template.find('.instructions').text(currentQuestion.question);
-  //   $template.find('.answer').text(currentQuestion.answer);
-  //   $(currentQuestion.options).each(function(i, animal){
-  //     $template.find('.choiceimages').append(`
-  //       <figure class="image is-200x200 choiceimage" data-choice='${animal}'>
-  //         <img src="../images/${animal}.jpeg" alt="${animal}">
-  //       </figure>`);
-  //   });
-  //   $template.find('.checkbutton').hide();
-  //   $template.on('click', '.choiceimage', function(){
-  //     choice = $(this).data('choice');
-  //     console.log(choice);
-  //     $template.find('.checkbutton').show();
-  //   });
-  //
-  //   $template.on('click', '.checkbutton', function(){
-  //     if(choice === currentQuestion.rightAnswer){
-  //       $('.answer-modal p').text(currentQuestion.correctModal);
-  //     } else{
-  //       $('.answer-modal p').text(currentQuestion.incorrectModal);
-  //     }
-  //     $('.answer-modal').show();
-  //     $('.close-modal').on('click', function(){
-  //       $('.answer-modal').hide();
-  //       if(choice === currentQuestion.rightAnswer){
-  //         currentQuestionNumber++;
-  //         showQuestion(currentQuestionNumber);
-  //       }
-  //     });
-  //   });
-  //
-  //   $('.question-image-template').show();
-  //
-  //   return $template;
-  // }
-  //
 
-  function showQuestionAudioText(currentQuestion){
-    console.log(currentQuestion);
-    const $template = $('.question-audio-text-template');
+
+
+  // IMAGE QUESTIONS
+
+  function showQuestionImage(currentQuestion){
+    console.log('Image question');
+    const $template = $('.question-image-template');
     $template.find('.instructions').text(currentQuestion.question);
-    $template.find('.sounds').append(
-      '<audio controls src="../sounds/${audioFile}"></audio>'
-    );
-    $template.find('.input').append(
-      '<input class="input is-large" type="text">'
-    );
+    $template.find('.answer').text(currentQuestion.answer);
+    $(currentQuestion.options).each(function(i, animal){
+      $template.find('.choiceimages').append(`
+        <figure class="image is-200x200 choiceimage" data-choice='${animal}'>
+          <img src="../images/${animal}.jpeg" alt="${animal}">
+        </figure>`);
+    });
     $template.find('.checkbutton').hide();
+    $template.on('click', '.choiceimage', function(){
+      choice = $(this).data('choice');
+      console.log(choice);
+      $template.find('.checkbutton').show();
+    });
 
     $template.on('click', '.checkbutton', function(){
-      if('.input' === currentQuestion.rightAnswer){
+      if(choice === currentQuestion.rightAnswer){
         $('.answer-modal p').text(currentQuestion.correctModal);
       } else{
         $('.answer-modal p').text(currentQuestion.incorrectModal);
@@ -127,12 +104,55 @@ $(function(){
       $('.answer-modal').show();
       $('.close-modal').on('click', function(){
         $('.answer-modal').hide();
-        if('.input' === currentQuestion.rightAnswer){
+        if(choice === currentQuestion.rightAnswer){
           currentQuestionNumber++;
           showQuestion(currentQuestionNumber);
         }
       });
     });
+
+    $('.question-image-template').show();
+
+    return $template;
+  }
+
+
+
+  // AUDIO-TEXT QUESTIONS
+
+
+  function showQuestionAudioText(currentQuestion){
+    const $input = $('.input');
+    console.log('Audio question', currentQuestion);
+    const $template = $('.question-audio-text-template');
+    $template.find('.instructions').text(currentQuestion.question);
+    console.log('our question',currentQuestion.question);
+    $template.find('.sounds audio').attr('src', `../sounds/${currentQuestion.audioFile}`);
+
+    $template.on('click', '.checkbutton', function(){
+      console.log('inside the click function');
+      
+      if($input.val() === currentQuestion.rightAnswer){
+        console.log('indise the if inside the click function',$input.val(), currentQuestion.rightAnswer);
+        $('.answer-modal p').text(currentQuestion.correctModal);
+      } else{
+        console.log('ELSEIF---> inputValue===>', $input.val());
+        $('.answer-modal p').text(currentQuestion.incorrectModal);
+        $('.question-audio-text-template').show();
+      }
+
+      $('.answer-modal').show();
+      $('.close-modal').on('click', function(){
+        console.log('modal has been clicked');
+        $('.answer-modal').hide();
+        $('.question-audio-text-template').show();
+        if($input.val() === currentQuestion.rightAnswer){
+          currentQuestionNumber++;
+          showQuestion(currentQuestionNumber);
+        }
+      });
+    });
+
     $('.question-audio-text-template').show();
     return $template;
   }
@@ -140,15 +160,13 @@ $(function(){
 
 
 
-
+  // TRANSLATE QUESTIONS
   function showQuestionTranslate(currentQuestion){
+    const $input = $('.input');
     const $template = $('.question-translate-template');
     $template.find('.instructions').text(currentQuestion.question);
-    $template.children('.input').append(
-      '<input class="input is-large" type="text">'
-    );
     $template.on('click', '.checkbutton', function(){
-      if('.input' === currentQuestion.rightAnswer){
+      if($input.val() === currentQuestion.rightAnswer){
         $('.answer-modal p').text(currentQuestion.correctModal);
       } else{
         $('.answer-modal p').text(currentQuestion.incorrectModal);
@@ -156,7 +174,7 @@ $(function(){
       $('.answer-modal').show();
       $('.close-modal').on('click', function(){
         $('.answer-modal').hide();
-        if('.input' === currentQuestion.rightAnswer){
+        if($input.val() === currentQuestion.rightAnswer){
           currentQuestionNumber++;
           showQuestion(currentQuestionNumber);
         }
@@ -169,7 +187,7 @@ $(function(){
 
 
 
-
+  // WORD ORDER QUESTIONS
 
   function showQuestionWordOrder(currentQuestion){
     const $template = $('.question-word-order-template');
@@ -184,7 +202,7 @@ $(function(){
       <button id="word5"class="button is-medium words">animal</button>
       <button id="word6"class="button is-medium words">un</button>`
     );
-
+    $('.question-word-order-template').show();
     return $template;
   }
 
@@ -193,7 +211,7 @@ $(function(){
 
 
 
-
+  // ****** OLD ****** //
 
 
 
