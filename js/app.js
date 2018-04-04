@@ -117,15 +117,9 @@ $(function(){
       '<input class="input is-large" type="text">'
     );
     $template.find('.checkbutton').hide();
-    $template.on('click', '.input', function(){
-      choice = $(this).data('choice');
-      console.log(choice);
-      $template.find('.checkbutton').show();
-    });
-
 
     $template.on('click', '.checkbutton', function(){
-      if(input === currentQuestion.rightAnswer){
+      if('.input' === currentQuestion.rightAnswer){
         $('.answer-modal p').text(currentQuestion.correctModal);
       } else{
         $('.answer-modal p').text(currentQuestion.incorrectModal);
@@ -133,14 +127,13 @@ $(function(){
       $('.answer-modal').show();
       $('.close-modal').on('click', function(){
         $('.answer-modal').hide();
-        if(choice === currentQuestion.rightAnswer){
+        if('.input' === currentQuestion.rightAnswer){
           currentQuestionNumber++;
           showQuestion(currentQuestionNumber);
         }
       });
     });
-
-
+    $('.question-audio-text-template').show();
     return $template;
   }
 
@@ -148,38 +141,53 @@ $(function(){
 
 
 
-  // function showQuestionTranslate(currentQuestion){
-  //   currentQuestionData = questionsFr[currentQuestion];
-  //   console.log(currentQuestionData);
-  //   const $template = $('.question-translate-template');
-  //   $template.children('.instructions').text(currentQuestionData.question);
-  //   $template.children('.answer').text(currentQuestionData.answer);
-  //   $template.children('.input').append(
-  //     '<input class="input is-large" type="text">'
-  //     );
-  //
-  //   return $template;
-  // }
-  //
-  // function showQuestionWordOrder(currentQuestion){
-  //   currentQuestionData = questionsFr[currentQuestion];
-  //   console.log(currentQuestionData);
-  //   const $template = $('.question-word-order-template');
-  //   $template.children('.instructions').text(currentQuestionData.question);
-  //   $template.children('.answer').text(currentQuestionData.answer);
-  //   $template.children('.words').append(
-  //     // const numberOfWords = (answer.val().split(/[\s\.,;]+/)).length;
-  //     // numberOfButtons = numberOfWords
-  //     `<button id="word1"class="button is-medium words">est</button>
-  //     <button id="word2"class="button is-medium words">Mon</button>
-  //     <button id="word3"class="button is-medium words">préféré</button>
-  //     <button id="word4"class="button is-medium words">lapin.</button>
-  //     <button id="word5"class="button is-medium words">animal</button>
-  //     <button id="word6"class="button is-medium words">un</button>`
-  //     );
-  //
-  //   return $template;
-  // },
+  function showQuestionTranslate(currentQuestion){
+    const $template = $('.question-translate-template');
+    $template.find('.instructions').text(currentQuestion.question);
+    $template.children('.input').append(
+      '<input class="input is-large" type="text">'
+    );
+    $template.on('click', '.checkbutton', function(){
+      if('.input' === currentQuestion.rightAnswer){
+        $('.answer-modal p').text(currentQuestion.correctModal);
+      } else{
+        $('.answer-modal p').text(currentQuestion.incorrectModal);
+      }
+      $('.answer-modal').show();
+      $('.close-modal').on('click', function(){
+        $('.answer-modal').hide();
+        if('.input' === currentQuestion.rightAnswer){
+          currentQuestionNumber++;
+          showQuestion(currentQuestionNumber);
+        }
+      });
+    });
+    $('.question-translate-template').show();
+    return $template;
+  }
+
+
+
+
+
+
+  function showQuestionWordOrder(currentQuestion){
+    const $template = $('.question-word-order-template');
+    $template.find('.instructions').text(currentQuestionData.question);
+    $template.find('.answer').text(currentQuestionData.answer);
+    $template.find('.words').append(
+      // const numberOfWords = (answer.val().split(/[\s\.,;]+/)).length;
+      // numberOfButtons = numberOfWords
+      `<button id="word1"class="button is-medium words">est</button>
+      <button id="word2"class="button is-medium words">Mon</button>
+      <button id="word3"class="button is-medium words">préféré</button>
+      <button id="word4"class="button is-medium words">lapin.</button>
+      <button id="word5"class="button is-medium words">animal</button>
+      <button id="word6"class="button is-medium words">un</button>`
+      );
+
+    return $template;
+  },
 
 
 

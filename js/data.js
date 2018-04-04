@@ -16,21 +16,19 @@ const questionsFr = [
     type: 'audio-text',
     question: 'Écoute et écris la phrase.',
     audioFile: 'frquestion2.mp3',
-    answer: 'Je n\'aime pas les serpents.',
-    options: [
-      ''
-    ]},
+    rightAnswer: 'Je n\'aime pas les serpents.',
+    correctModal: 'Très bien!',
+    incorrectModal: 'Attention!'},
   {
     type: 'translate',
     question: 'Traduis cette phrase.',
-    answer: 'I don\'t like snakes.',
-    options: [
-      ''
-    ]},
+    rightAnsweranswer: 'I don\'t like snakes.',
+    correctModal: 'Très bien!',
+    incorrectModal: 'Attention!'},
   {
     type: 'word-order',
     question: 'Mets les mots dans l\'ordre correct.',
-    answer: 'Mon animal préféré est un lapin.',
+    rightAnswer: 'Mon animal préféré est un lapin.',
     options: [
       'Mon', 'animal', 'préféré', 'est', 'un', 'lapin.'
     ]}
