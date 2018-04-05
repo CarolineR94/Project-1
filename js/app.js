@@ -77,7 +77,7 @@ $(function(){
   // IMAGE QUESTIONS
 
   function showQuestionImage(currentQuestion){
-    console.log('Image question');
+    // console.log('Image question');
     const $template = $('.question-image-template');
     $template.find('.instructions').text(currentQuestion.question);
     $template.find('.answer').text(currentQuestion.answer);
@@ -90,7 +90,7 @@ $(function(){
     $template.find('.checkbutton').hide();
     $template.on('click', '.choiceimage', function(){
       choice = $(this).data('choice');
-      console.log(choice);
+      // console.log(choice);
       $template.find('.checkbutton').show();
     });
     $template.on('click', '.checkbutton', function(){
@@ -120,24 +120,24 @@ $(function(){
   const $input = $('.input');
 
   function showQuestionAudioText(currentQuestion){
-    console.log('Audio question', currentQuestion);
+    // console.log('Audio question', currentQuestion);
     const $template = $('.question-audio-text-template');
     $template.find('.instructions').text(currentQuestion.question);
     $template.find('.sounds audio').attr('src', `../sounds/${currentQuestion.audioFile}`);
     $template.on('click', '.checkbutton', function(){
-      console.log('inside the click function');
+      // console.log('inside the click function');
       if($input.val() === currentQuestion.rightAnswer){
-        console.log('inside the if statement inside the check click function',$input.val(), 'correct answer', currentQuestion.rightAnswer);
+        // console.log('inside the if statement inside the check click function',$input.val(), 'correct answer', currentQuestion.rightAnswer);
         $('.answer-modal p').text(currentQuestion.correctModal);
         currentQuestionNumber++;
         $('.answer-modal').show();
         $('.close-modal').on('click', function(){
           $('.answer-modal').hide();
         });
-        console.log(currentQuestionNumber);
+        // console.log(currentQuestionNumber);
         showQuestion(currentQuestionNumber);
       } else{
-        console.log('ELSEIF---> inputValue===>', $input.val());
+        // console.log('ELSEIF---> inputValue===>', $input.val());
         $('.answer-modal p').text(currentQuestion.incorrectModal);
         $('.answer-modal').show();
         $('.close-modal').on('click', function(){
@@ -168,7 +168,7 @@ $(function(){
         $('.answer-modal').hide();
         if($input.val() === currentQuestion.rightAnswer){
           currentQuestionNumber++;
-          console.log(currentQuestionNumber);
+          // console.log(currentQuestionNumber);
           showQuestion(currentQuestionNumber);
         }
       });
@@ -183,7 +183,7 @@ $(function(){
   // WORD ORDER QUESTIONS
 
   function showQuestionWordOrder(currentQuestion){
-    console.log('word order question', currentQuestion);
+    // console.log('word order question', currentQuestion);
     const $template = $('.question-word-order-template');
     $template.find('.instructions').text(currentQuestion.question);
     $template.find('.words').append(
@@ -209,8 +209,10 @@ $(function(){
 
     // append buttons
     const $buttons = $('button.words');
-    for (var i = 0; i < $buttons.length; i++) {
-      console.log($buttons[i].innerHTML);
+    console.log($buttons.length);
+    for (let i = 0; i < $buttons.length; i++) {
+      console.log(i);
+      console.log($buttons[i]);
       const text = $buttons[i].innerHTML;
       $($buttons[i]).click(function(){
         console.log('clicked!');
@@ -219,28 +221,30 @@ $(function(){
 
 
       // check answer
-      if($('#droparea').buttons.text()) === currentQuestion.rightAnswer){
-        $('.answer-modal p').text(currentQuestion.correctModal);
-      } else{
-        $('.answer-modal p').text(currentQuestion.incorrectModal);
-      }
-      $('.answer-modal').show();
-      $('.close-modal').on('click', function(){
-        $('.answer-modal').hide();
-        if($('#droparea').buttons.text()) === currentQuestion.rightAnswer){
-          currentQuestionNumber++;
-          console.log(currentQuestionNumber);
-          showQuestion(currentQuestionNumber);
-        }
-      });
+      //
+      // const $checkAnswer = $('#droparea').buttons;
+      // if($checkAnswer.text() === currentQuestion.rightAnswer){
+      //   $('.answer-modal p').text(currentQuestion.correctModal);
+      // } else{
+      //   $('.answer-modal p').text(currentQuestion.incorrectModal);
+      // }
+      // $('.answer-modal').show();
+      // $('.close-modal').on('click', function(){
+      //   $('.answer-modal').hide();
+      //   if($checkAnswer.text() === currentQuestion.rightAnswer){
+      //     currentQuestionNumber++;
+      //     console.log(currentQuestionNumber);
+      //     showQuestion(currentQuestionNumber);
+      //   }
+      // });
 
 
 
 
 
       $('.question-word-order-template').show();
-      return $template;
     }
+    return $template;
   }
 
 
