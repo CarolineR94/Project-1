@@ -15,13 +15,21 @@ $lightcyan: #DFF8EB;
 $complement: #F7F7DF;
 
 $box-background-color: $lightcyan;
-
-
-@import "bulma/bulma.scss";
+$modal-card-head-background-color: $complement;
+$modal-card-body-background-color: $complement;
+$body-background-color: #caf3de;
 
 .body{
   background-color: $lightcyan;
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+}
+
+@import "bulma/bulma.scss";
+
+
+
+.modal-content{
+  margin: 20%;
 }
 
 #firstpagebox{
@@ -38,7 +46,7 @@ p.is-size-2{
 }
 
 .card-footer{
-  border: 2px solid $seablue;
+  border: 3px solid $seablue;
   border-radius: $radius-large;
   background-color: $complement;
 }
@@ -49,8 +57,12 @@ p.is-size-2{
 }
 
 .box {
-  border: 2px solid $seablue;
+  border: 6px solid $seablue;
   margin: 5%;
+}
+
+#droparea{
+  border: 1px solid $seablue;
 }
 
 .question-image-template{
@@ -61,7 +73,7 @@ p.is-size-2{
 }
 
 .button{
-  border: 2px solid $seablue;
+  border: 3px solid $seablue;
 }
 
 

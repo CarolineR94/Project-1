@@ -1,6 +1,10 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,900");
 /* add your customization here... */
+.body {
+  background-color: #DFF8EB;
+  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png"); }
+
 /*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -80,7 +84,7 @@ th {
   text-align: left; }
 
 html {
-  background-color: white;
+  background-color: #caf3de;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -3893,7 +3897,7 @@ a.dropdown-item {
 .modal-card-head,
 .modal-card-foot {
   align-items: center;
-  background-color: whitesmoke;
+  background-color: #F7F7DF;
   display: flex;
   flex-shrink: 0;
   justify-content: flex-start;
@@ -3921,7 +3925,7 @@ a.dropdown-item {
 
 .modal-card-body {
   -webkit-overflow-scrolling: touch;
-  background-color: white;
+  background-color: #F7F7DF;
   flex-grow: 1;
   flex-shrink: 1;
   overflow: auto;
@@ -6429,9 +6433,8 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
-.body {
-  background-color: #DFF8EB;
-  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png"); }
+.modal-content {
+  margin: 20%; }
 
 #firstpagebox {
   margin: 5%; }
@@ -6444,7 +6447,7 @@ p.is-size-2 {
   text-align: center; }
 
 .card-footer {
-  border: 2px solid #006E90;
+  border: 3px solid #006E90;
   border-radius: 5px;
   background-color: #F7F7DF; }
 
@@ -6452,14 +6455,17 @@ p.is-size-2 {
   background-color: #F7F7DF; }
 
 .box {
-  border: 2px solid #006E90;
+  border: 6px solid #006E90;
   margin: 5%; }
+
+#droparea {
+  border: 1px solid #006E90; }
 
 .question-image-template .choiceimage {
   padding: 20px; }
 
 .button {
-  border: 2px solid #006E90; }
+  border: 3px solid #006E90; }
 
 #droparea {
   background-color: #F7F7DF; }

@@ -110,9 +110,7 @@ $(function(){
         });
       }
     });
-
     $('.question-image-template').show();
-
     return $template;
   }
 
@@ -191,26 +189,25 @@ $(function(){
     $template.find('.words').append(
       // const numberOfWords = (answer.val().split(/[\s\.,;]+/)).length;
       // numberOfButtons = numberOfWords
-      `<button id="word1"class="button is-medium words">${currentQuestion.options[3]}</button>
-      <button id="word2"class="button is-medium words">${currentQuestion.options[0]}</button>
-      <button id="word3"class="button is-medium words">${currentQuestion.options[2]}</button>
-      <button id="word4"class="button is-medium words">${currentQuestion.options[5]}</button>
-      <button id="word5"class="button is-medium words">${currentQuestion.options[1]}</button>
-      <button id="word6"class="button is-medium words">${currentQuestion.options[4]}</button>`
+      `<button class="button is-medium words">${currentQuestion.options[3]}</button>
+      <button class="button is-medium words">${currentQuestion.options[0]}</button>
+      <button class="button is-medium words">${currentQuestion.options[2]}</button>
+      <button class="button is-medium words">${currentQuestion.options[5]}</button>
+      <button class="button is-medium words">${currentQuestion.options[1]}</button>
+      <button class="button is-medium words">${currentQuestion.options[4]}</button>`
     );
-    //
-    // currentQuestion.forEach(function(){
-    //   currentQuestion.options.click(function(){
-    //     currentQuestion.options.appendTo('#droparea');
-    //   });
-    // });
 
-    const $options = currentQuestion.options;
-    $options.forEach(function(){
-      $(this).click(function() {
-        $(this).appendTo('#droparea');
+
+    const $buttons = $('button.words');
+
+    for (var i = 0; i < $buttons.length; i++) {
+      console.log($buttons[i].innerHTML);
+      $($buttons[i]).click(function(){
+        console.log('clicked!');
+        $($buttons[i]).append('#droparea');
       });
-    });
+    }
+
 
 
 
