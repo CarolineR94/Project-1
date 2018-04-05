@@ -194,10 +194,31 @@ $(function(){
       `<button id="word1"class="button is-medium words">${currentQuestion.options[3]}</button>
       <button id="word2"class="button is-medium words">${currentQuestion.options[0]}</button>
       <button id="word3"class="button is-medium words">${currentQuestion.options[2]}</button>
-      <button id="word4"class="button is-medium words">${currentQuestion.options[5]}.</button>
+      <button id="word4"class="button is-medium words">${currentQuestion.options[5]}</button>
       <button id="word5"class="button is-medium words">${currentQuestion.options[1]}</button>
       <button id="word6"class="button is-medium words">${currentQuestion.options[4]}</button>`
     );
+    //
+    // currentQuestion.forEach(function(){
+    //   currentQuestion.options.click(function(){
+    //     currentQuestion.options.appendTo('#droparea');
+    //   });
+    // });
+
+    const $options = currentQuestion.options;
+    $options.forEach(function(){
+      $(this).click(function() {
+        $(this).appendTo('#droparea');
+      });
+    });
+
+
+
+
+
+
+
+
     $('.question-word-order-template').show();
     return $template;
   }

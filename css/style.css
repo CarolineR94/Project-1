@@ -6455,17 +6455,11 @@ p.is-size-2 {
   border: 2px solid #006E90;
   margin: 5%; }
 
-.choiceimage1, .choiceimage2, .choiceimage3 {
+.question-image-template .choiceimage {
   padding: 20px; }
 
-.checkbutton1, .checkbutton2, .checkbutton3, .checkbutton4 {
+.button {
   border: 2px solid #006E90; }
-
-#correct-continue-button1, #correct-continue-button2, #correct-continue-button3, #correct-continue-button4 {
-  border: 2px solid #99C24D; }
-
-#incorrect-back-button1, #incorrect-back-button2, #incorrect-back-button3, #incorrect-back-button4 {
-  border: 2px solid red; }
 
 #droparea {
   background-color: #F7F7DF; }
