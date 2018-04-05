@@ -1,5 +1,3 @@
-console.log('Data.js Loaded!!');
-
 const questionsFr = [
   {
     type: 'image',
@@ -38,4 +36,45 @@ const questionsFr = [
     rightAnswer: 'Mon animal préféré est un lapin.',
     correctModal: 'Parfait - 100%!',
     incorrectModal: 'Oups!'}
+];
+
+
+const questionsIt = [
+  {
+    type: 'image',
+    question: 'Clicca sull\'immagine giusta.',
+    answer: 'Il topo:',
+    options: [
+      'cat', 'dog','mouse'
+    ],
+    rightAnswer: 'mouse',
+    correctModal: 'Bravo!',
+    incorrectModal: 'Attenzione!'
+  },
+
+  {
+    type: 'audio-text',
+    question: 'Ascolta e scriva la frase.',
+    audioFile: 'itquestion2.mp3',
+    rightAnswer: 'Non mi piacciono i cani.',
+    correctModal: 'Esatto!',
+    incorrectModal: 'Prova ancora!'},
+
+  {
+    type: 'translate',
+    question: 'Traduca questa frase.',
+    rightAnswer: 'I don\'t like dogs.',
+    correctModal: 'Ottimo lavoro!',
+    incorrectModal: 'Riprovi!'},
+
+
+  {
+    type: 'word-order',
+    question: 'Metta le parole nel giusto ordine.',
+    options: [
+      'Il', 'mio', 'animale', 'preferito', 'è', 'un', 'coniglio.'
+    ],
+    rightAnswer: 'Il mio animale preferito è un coniglio.',
+    correctModal: 'Perfetto - 100%!',
+    incorrectModal: 'Ops!'}
 ];
