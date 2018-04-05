@@ -56,7 +56,6 @@ $(function(){
 
   function showQuestion(questionId){
     const currentQuestion = questionsFr[questionId];
-    // console.log(currentQuestion);
     if(currentQuestion.type === 'image'){
       const $template = showQuestionImage(currentQuestion);
       $('.mainContainerForAllQuestions').html($template);
@@ -94,7 +93,6 @@ $(function(){
       console.log(choice);
       $template.find('.checkbutton').show();
     });
-
     $template.on('click', '.checkbutton', function(){
       if(choice === currentQuestion.rightAnswer){
         $('.answer-modal p').text(currentQuestion.correctModal);
@@ -127,36 +125,32 @@ $(function(){
     console.log('Audio question', currentQuestion);
     const $template = $('.question-audio-text-template');
     $template.find('.instructions').text(currentQuestion.question);
-    console.log('our question',currentQuestion.question);
     $template.find('.sounds audio').attr('src', `../sounds/${currentQuestion.audioFile}`);
-
     $template.on('click', '.checkbutton', function(){
       console.log('inside the click function');
       if($input.val() === currentQuestion.rightAnswer){
         console.log('inside the if statement inside the check click function',$input.val(), 'correct answer', currentQuestion.rightAnswer);
         $('.answer-modal p').text(currentQuestion.correctModal);
+        currentQuestionNumber++;
+        $('.answer-modal').show();
+        $('.close-modal').on('click', function(){
+          $('.answer-modal').hide();
+        });
+        console.log(currentQuestionNumber);
+        showQuestion(currentQuestionNumber);
       } else{
         console.log('ELSEIF---> inputValue===>', $input.val());
         $('.answer-modal p').text(currentQuestion.incorrectModal);
+        $('.answer-modal').show();
+        $('.close-modal').on('click', function(){
+          $('.answer-modal').hide();
+        });
       }
-      $('.answer-modal').show();
-      $('.close-modal').on('click', function(){
-        console.log('modal has been clicked');
-        $('.answer-modal').hide();
-        $('.question-audio-text-template').show();
-        if($input.val() === currentQuestion.rightAnswer){
-          currentQuestionNumber++;
-          showQuestion(currentQuestionNumber);
-        } else if($input.val() !== currentQuestion.rightAnswer){
-          $('.question-audio-text-template').show();
-        }
-      });
     });
 
     $('.question-audio-text-template').show();
     return $template;
   }
-
 
 
 
@@ -176,6 +170,7 @@ $(function(){
         $('.answer-modal').hide();
         if($input.val() === currentQuestion.rightAnswer){
           currentQuestionNumber++;
+          console.log(currentQuestionNumber);
           showQuestion(currentQuestionNumber);
         }
       });
@@ -190,17 +185,18 @@ $(function(){
   // WORD ORDER QUESTIONS
 
   function showQuestionWordOrder(currentQuestion){
+    console.log('word order question', currentQuestion);
     const $template = $('.question-word-order-template');
     $template.find('.instructions').text(currentQuestion.question);
     $template.find('.words').append(
       // const numberOfWords = (answer.val().split(/[\s\.,;]+/)).length;
       // numberOfButtons = numberOfWords
-      `<button id="word1"class="button is-medium words">est</button>
-      <button id="word2"class="button is-medium words">Mon</button>
-      <button id="word3"class="button is-medium words">préféré</button>
-      <button id="word4"class="button is-medium words">lapin.</button>
-      <button id="word5"class="button is-medium words">animal</button>
-      <button id="word6"class="button is-medium words">un</button>`
+      `<button id="word1"class="button is-medium words">${currentQuestion.options[3]}</button>
+      <button id="word2"class="button is-medium words">${currentQuestion.options[0]}</button>
+      <button id="word3"class="button is-medium words">${currentQuestion.options[2]}</button>
+      <button id="word4"class="button is-medium words">${currentQuestion.options[5]}.</button>
+      <button id="word5"class="button is-medium words">${currentQuestion.options[1]}</button>
+      <button id="word6"class="button is-medium words">${currentQuestion.options[4]}</button>`
     );
     $('.question-word-order-template').show();
     return $template;
