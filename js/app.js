@@ -197,14 +197,13 @@ $(function(){
       <button class="button is-medium words">${currentQuestion.options[4]}</button>`
     );
 
-
     const $buttons = $('button.words');
-
     for (var i = 0; i < $buttons.length; i++) {
       console.log($buttons[i].innerHTML);
+      const text = $buttons[i].innerHTML;
       $($buttons[i]).click(function(){
         console.log('clicked!');
-        $($buttons[i]).append('#droparea');
+        $('#droparea').append(`<button class="button is-medium words inline-block">${text}</button>`);
       });
     }
 

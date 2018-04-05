@@ -13,16 +13,13 @@ $androidgreen: #99C24D;
 $pictonblue: #41BBD9;
 $lightcyan: #DFF8EB;
 $complement: #F7F7DF;
+$background-complement: #caf3de;
 
 $box-background-color: $lightcyan;
 $modal-card-head-background-color: $complement;
 $modal-card-body-background-color: $complement;
-$body-background-color: #caf3de;
+$body-background-color: $background-complement;
 
-.body{
-  background-color: $lightcyan;
-  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
-}
 
 @import "bulma/bulma.scss";
 

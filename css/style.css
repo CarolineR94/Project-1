@@ -1,10 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,900");
 /* add your customization here... */
-.body {
-  background-color: #DFF8EB;
-  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png"); }
-
 /*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
