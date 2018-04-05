@@ -98,17 +98,19 @@ $(function(){
     $template.on('click', '.checkbutton', function(){
       if(choice === currentQuestion.rightAnswer){
         $('.answer-modal p').text(currentQuestion.correctModal);
+        currentQuestionNumber++;
+        $('.answer-modal').show();
+        $('.close-modal').on('click', function(){
+          $('.answer-modal').hide();
+        });
+        showQuestion(currentQuestionNumber);
       } else{
         $('.answer-modal p').text(currentQuestion.incorrectModal);
+        $('.answer-modal').show();
+        $('.close-modal').on('click', function(){
+          $('.answer-modal').hide();
+        });
       }
-      $('.answer-modal').show();
-      $('.close-modal').on('click', function(){
-        $('.answer-modal').hide();
-        if(choice === currentQuestion.rightAnswer){
-          currentQuestionNumber++;
-          showQuestion(currentQuestionNumber);
-        }
-      });
     });
 
     $('.question-image-template').show();
@@ -119,10 +121,9 @@ $(function(){
 
 
   // AUDIO-TEXT QUESTIONS
-
+  const $input = $('.input');
 
   function showQuestionAudioText(currentQuestion){
-    const $input = $('.input');
     console.log('Audio question', currentQuestion);
     const $template = $('.question-audio-text-template');
     $template.find('.instructions').text(currentQuestion.question);
@@ -131,16 +132,13 @@ $(function(){
 
     $template.on('click', '.checkbutton', function(){
       console.log('inside the click function');
-      
       if($input.val() === currentQuestion.rightAnswer){
-        console.log('indise the if inside the click function',$input.val(), currentQuestion.rightAnswer);
+        console.log('inside the if statement inside the check click function',$input.val(), 'correct answer', currentQuestion.rightAnswer);
         $('.answer-modal p').text(currentQuestion.correctModal);
       } else{
         console.log('ELSEIF---> inputValue===>', $input.val());
         $('.answer-modal p').text(currentQuestion.incorrectModal);
-        $('.question-audio-text-template').show();
       }
-
       $('.answer-modal').show();
       $('.close-modal').on('click', function(){
         console.log('modal has been clicked');
@@ -149,6 +147,8 @@ $(function(){
         if($input.val() === currentQuestion.rightAnswer){
           currentQuestionNumber++;
           showQuestion(currentQuestionNumber);
+        } else if($input.val() !== currentQuestion.rightAnswer){
+          $('.question-audio-text-template').show();
         }
       });
     });
