@@ -187,8 +187,17 @@ $(function(){
     const $template = $('.question-word-order-template');
     $template.find('.instructions').text(currentQuestion.question);
     $template.find('.words').append(
-      // const numberOfWords = (answer.val().split(/[\s\.,;]+/)).length;
-      // numberOfButtons = numberOfWords
+
+
+      // generate number of buttons depending on array length
+    // const numberOfWords = (answer.val().split(/[\s\.,;]+/)).length;
+    //
+    //   for(i = 0; i ; i++) {
+    //     $('.buttons').append(`<input class="button is-medium words">${currentQuestion.options}</button>`);
+    //   }
+
+
+    // add text to buttons
       `<button class="button is-medium words">${currentQuestion.options[3]}</button>
       <button class="button is-medium words">${currentQuestion.options[0]}</button>
       <button class="button is-medium words">${currentQuestion.options[2]}</button>
@@ -197,6 +206,8 @@ $(function(){
       <button class="button is-medium words">${currentQuestion.options[4]}</button>`
     );
 
+
+    // append buttons
     const $buttons = $('button.words');
     for (var i = 0; i < $buttons.length; i++) {
       console.log($buttons[i].innerHTML);
@@ -205,18 +216,31 @@ $(function(){
         console.log('clicked!');
         $('#droparea').append(`<button class="button is-medium words inline-block">${text}</button>`);
       });
+
+
+      // check answer
+      if($('#droparea').buttons.text()) === currentQuestion.rightAnswer){
+        $('.answer-modal p').text(currentQuestion.correctModal);
+      } else{
+        $('.answer-modal p').text(currentQuestion.incorrectModal);
+      }
+      $('.answer-modal').show();
+      $('.close-modal').on('click', function(){
+        $('.answer-modal').hide();
+        if($('#droparea').buttons.text()) === currentQuestion.rightAnswer){
+          currentQuestionNumber++;
+          console.log(currentQuestionNumber);
+          showQuestion(currentQuestionNumber);
+        }
+      });
+
+
+
+
+
+      $('.question-word-order-template').show();
+      return $template;
     }
-
-
-
-
-
-
-
-
-
-    $('.question-word-order-template').show();
-    return $template;
   }
 
 
