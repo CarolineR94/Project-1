@@ -1,3 +1,5 @@
+https://caroliner94.github.io/Project-1/
+
 ### Aim:
 to create a web game as a first project on the GA WDI course.
 
@@ -7,7 +9,6 @@ to create a web game as a first project on the GA WDI course.
 * Javascript (ECMAScript 6) + jQuery
 * Git
 * Github
-* Heroku
 
 ### The Game:
 The game is a language learning game. Users can select either French or Italian on the starting page, and will be taken through a series of questions in different formats.
