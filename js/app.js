@@ -87,6 +87,7 @@ $(function(){
       if(choice === currentQuestion.rightAnswer){
         $('.answer-modal p').text(currentQuestion.correctModal);
         currentQuestionNumber++;
+        currentQuestionNumberIt++;
         $('.answer-modal').show();
         $('.close-modal').on('click', function(){
           $('.answer-modal').hide();
@@ -129,6 +130,7 @@ $(function(){
         // console.log('inside the if statement inside the check click function',$input.val(), 'correct answer', currentQuestion.rightAnswer);
         $('.answer-modal p').text(currentQuestion.correctModal);
         currentQuestionNumber++;
+        currentQuestionNumberIt++;
         $('.answer-modal').show();
         $('.close-modal').on('click', function(){
           $('.answer-modal').hide();
@@ -173,6 +175,7 @@ $(function(){
         $('.answer-modal').hide();
         if($input.val() === currentQuestion.rightAnswer){
           currentQuestionNumber++;
+          currentQuestionNumberIt++;
           // console.log(currentQuestionNumber);
           console.log(language);
           if(language === 'french'){
@@ -244,6 +247,7 @@ $(function(){
   //       $('.answer-modal').hide();
   //       if($checkAnswer.text() === currentQuestion.rightAnswer){
   //         currentQuestionNumber++;
+  //         currentQuestionNumberIt++;
   //         console.log(currentQuestionNumber);
   //         showQuestion(currentQuestionNumber);
   //       }
