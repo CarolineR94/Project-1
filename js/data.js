@@ -7,8 +7,11 @@ const questionsFr = [
       'cat', 'dog','mouse'
     ],
     rightAnswer: 'dog',
+    buttontext: 'Vérifie',
     correctModal: 'Très bien!',
-    incorrectModal: 'Attention!'
+    correctModalButton: 'Continue',
+    incorrectModal: 'Attention!',
+    incorrectModalButton: 'Retour'
   },
 
   {
@@ -16,15 +19,23 @@ const questionsFr = [
     question: 'Écoute et écris la phrase.',
     audioFile: 'frquestion2.mp3',
     rightAnswer: 'Je n\'aime pas les serpents.',
+    buttontext: 'Vérifie',
     correctModal: 'Génial!',
-    incorrectModal: 'Essaie encore!'},
+    correctModalButton: 'Continue',
+    incorrectModal: 'Essaie encore!',
+    incorrectModalButton: 'Retour'
+  },
 
   {
     type: 'translate',
     question: 'Traduis cette phrase.',
     rightAnswer: 'I don\'t like snakes.',
+    buttontext: 'Vérifie',
     correctModal: 'Excellent!',
-    incorrectModal: 'Essaie encore!'},
+    correctModalButton: 'Continue',
+    incorrectModal: 'Essaie encore!',
+    incorrectModalButton: 'Retour'
+  },
 
 
   {
@@ -34,8 +45,12 @@ const questionsFr = [
       'Mon', 'animal', 'préféré', 'est', 'un', 'lapin.'
     ],
     rightAnswer: 'Mon animal préféré est un lapin.',
+    buttontext: 'Vérifie',
     correctModal: 'Parfait - 100%!',
-    incorrectModal: 'Oups!'}
+    correctModalButton: 'Continue',
+    incorrectModal: 'Oups!',
+    incorrectModalButton: 'Retour'
+  }
 ];
 
 
@@ -48,8 +63,11 @@ const questionsIt = [
       'cat', 'dog','mouse'
     ],
     rightAnswer: 'mouse',
+    buttontext: 'Verifica',
     correctModal: 'Bravo!',
-    incorrectModal: 'Attenzione!'
+    correctModalButton: 'Avanti',
+    incorrectModal: 'Attenzione!',
+    incorrectModalButton: 'Indietro'
   },
 
   {
@@ -57,15 +75,23 @@ const questionsIt = [
     question: 'Ascolta e scriva la frase.',
     audioFile: 'itquestion2.mp3',
     rightAnswer: 'Non mi piacciono i cani.',
+    buttontext: 'Verifica',
     correctModal: 'Esatto!',
-    incorrectModal: 'Prova ancora!'},
+    correctModalButton: 'Avanti',
+    incorrectModal: 'Prova ancora!',
+    incorrectModalButton: 'Indietro'
+  },
 
   {
     type: 'translate',
     question: 'Traduca questa frase.',
     rightAnswer: 'I don\'t like dogs.',
+    buttontext: 'Verifica',
     correctModal: 'Ottimo lavoro!',
-    incorrectModal: 'Riprovi!'},
+    correctModalButton: 'Avanti',
+    incorrectModal: 'Riprovi!',
+    incorrectModalButton: 'Indietro'
+  },
 
 
   {
@@ -75,6 +101,10 @@ const questionsIt = [
       'Il', 'mio', 'animale', 'preferito', 'è', 'un', 'coniglio.'
     ],
     rightAnswer: 'Il mio animale preferito è un coniglio.',
+    buttontext: 'Verifica',
     correctModal: 'Perfetto - 100%!',
-    incorrectModal: 'Ops!'}
+    correctModalButton: 'Avanti',
+    incorrectModal: 'Ops!',
+    incorrectModalButton: 'Indietro'
+  }
 ];

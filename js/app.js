@@ -71,6 +71,7 @@ $(function(){
     const $template = $('.question-image-template');
     $template.find('.instructions').text(currentQuestion.question);
     $template.find('.answer').text(currentQuestion.answer);
+    $template.find('.button').text(currentQuestion.buttontext);
     $(currentQuestion.options).each(function(i, animal){
       $template.find('.choiceimages').append(`
         <figure class="image is-200x200 choiceimage" data-choice='${animal}'>
@@ -86,6 +87,7 @@ $(function(){
     $template.on('click', '.checkbutton', function(){
       if(choice === currentQuestion.rightAnswer){
         $('.answer-modal p').text(currentQuestion.correctModal);
+        $('.answer-modal button').text(currentQuestion.correctModalButton);
         currentQuestionNumber++;
         currentQuestionNumberIt++;
         $('.answer-modal').show();
@@ -104,6 +106,7 @@ $(function(){
 
       } else{
         $('.answer-modal p').text(currentQuestion.incorrectModal);
+        $('.answer-modal button').text(currentQuestion.incorrectModalButton);
         $('.answer-modal').show();
         $('.close-modal').on('click', function(){
           $('.answer-modal').hide();
@@ -123,12 +126,14 @@ $(function(){
     // console.log('Audio question', currentQuestion);
     const $template = $('.question-audio-text-template');
     $template.find('.instructions').text(currentQuestion.question);
+    $template.find('.button').text(currentQuestion.buttontext);
     $template.find('.sounds audio').attr('src', `../sounds/${currentQuestion.audioFile}`);
     $template.on('click', '.checkbutton', function(){
       // console.log('inside the click function');
       if($input.val() === currentQuestion.rightAnswer){
         // console.log('inside the if statement inside the check click function',$input.val(), 'correct answer', currentQuestion.rightAnswer);
         $('.answer-modal p').text(currentQuestion.correctModal);
+        $('.answer-modal button').text(currentQuestion.correctModalButton);
         currentQuestionNumber++;
         currentQuestionNumberIt++;
         $('.answer-modal').show();
@@ -146,6 +151,7 @@ $(function(){
       } else{
         // console.log('ELSEIF---> inputValue===>', $input.val());
         $('.answer-modal p').text(currentQuestion.incorrectModal);
+        $('.answer-modal button').text(currentQuestion.incorrectModalButton);
         $('.answer-modal').show();
         $('.close-modal').on('click', function(){
           $('.answer-modal').hide();
@@ -164,11 +170,14 @@ $(function(){
     const $input = $('.input');
     const $template = $('.question-translate-template');
     $template.find('.instructions').text(currentQuestion.question);
+    $template.find('.button').text(currentQuestion.buttontext);
     $template.on('click', '.checkbutton', function(){
       if($input.val() === currentQuestion.rightAnswer){
         $('.answer-modal p').text(currentQuestion.correctModal);
+        $('.answer-modal button').text(currentQuestion.correctModalButton);
       } else{
         $('.answer-modal p').text(currentQuestion.incorrectModal);
+        $('.answer-modal button').text(currentQuestion.incorrectModalButton);
       }
       $('.answer-modal').show();
       $('.close-modal').on('click', function(){
@@ -199,6 +208,7 @@ $(function(){
   //   // console.log('word order question', currentQuestion);
   //   const $template = $('.question-word-order-template');
   //   $template.find('.instructions').text(currentQuestion.question);
+  //   $template.find('.button').text(currentQuestion.buttontext);
   //   $template.find('.words').append(
   //
   //
@@ -239,8 +249,11 @@ $(function(){
   //     console.log('--->',$checkAnswer);
   //     if($checkAnswer.text() === currentQuestion.rightAnswer){
   //       $('.answer-modal p').text(currentQuestion.correctModal);
+//         $('.answer-modal button').text(currentQuestion.correctModalButton);
+
   //     } else{
   //       $('.answer-modal p').text(currentQuestion.incorrectModal);
+  //       $('.answer-modal button').text(currentQuestion.incorrectModalButton);
   //     }
   //     $('.answer-modal').show();
   //     $('.close-modal').on('click', function(){
