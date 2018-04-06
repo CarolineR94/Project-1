@@ -1,11 +1,22 @@
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
+
 $(function(){
 
-  let currentQuestionNumber = 0;
+  let currentQuestionNumber = 3;
   const $imagefr = $('.imagefr');
   let choice = null;
   let language = null;
   const $firstpage = $('.firstpage');
   let currentQuestionNumberIt = 0;
+  let currentQuestionNumberFr = 0;
+
   const $imageit = $('.imageit');
 
 
@@ -28,6 +39,7 @@ $(function(){
 
   function showQuestion(questionId){
     const currentQuestion = questionsFr[questionId];
+    console.log(currentQuestion)
     if(currentQuestion.type === 'image'){
       const $template = showQuestionImage(currentQuestion);
       $('.mainContainerForAllQuestions').html($template);
@@ -202,78 +214,56 @@ $(function(){
 
 
 
-  // // WORD ORDER QUESTIONS
-  //
-  // function showQuestionWordOrder(currentQuestion){
-  //   // console.log('word order question', currentQuestion);
-  //   const $template = $('.question-word-order-template');
-  //   $template.find('.instructions').text(currentQuestion.question);
-  //   $template.find('.button').text(currentQuestion.buttontext);
-  //   $template.find('.words').append(
-  //
-  //
-  //     // generate number of buttons depending on array length
-  //   // const numberOfWords = (answer.val().split(/[\s\.,;]+/)).length;
-  //   //
-  //   //   for(i = 0; i ; i++) {
-  //   //     $('.buttons').append(`<input class="button is-medium words">${currentQuestion.options}</button>`);
-  //   //   }
-  //
-  //
-  //   // add text to buttons
-  //     `<button class="button is-medium words">${currentQuestion.options[3]}</button>
-  //     <button class="button is-medium words">${currentQuestion.options[0]}</button>
-  //     <button class="button is-medium words">${currentQuestion.options[2]}</button>
-  //     <button class="button is-medium words">${currentQuestion.options[5]}</button>
-  //     <button class="button is-medium words">${currentQuestion.options[1]}</button>
-  //     <button class="button is-medium words">${currentQuestion.options[4]}</button>`
-  //   );
-  //
-  //
-  //   // append buttons
-  //   const $buttons = $('button.words');
-  //   console.log($buttons.length);
-  //   for (let i = 0; i < $buttons.length; i++) {
-  //     console.log(i);
-  //     console.log($buttons[i]);
-  //     const text = $buttons[i].innerHTML;
-  //     $($buttons[i]).click(function(){
-  //       console.log('clicked!');
-  //       $('#droparea').append(`<button class="button is-medium words inline-block">${text}</button>`);
-  //     });
-  //
-  //
-  //     // check answer
-  //
-  //     const $checkAnswer = $('#droparea.button');
-  //     console.log('--->',$checkAnswer);
-  //     if($checkAnswer.text() === currentQuestion.rightAnswer){
-  //       $('.answer-modal p').text(currentQuestion.correctModal);
-//         $('.answer-modal button').text(currentQuestion.correctModalButton);
+  // WORD ORDER QUESTIONS
 
-  //     } else{
-  //       $('.answer-modal p').text(currentQuestion.incorrectModal);
-  //       $('.answer-modal button').text(currentQuestion.incorrectModalButton);
-  //     }
-  //     $('.answer-modal').show();
-  //     $('.close-modal').on('click', function(){
-  //       $('.answer-modal').hide();
-  //       if($checkAnswer.text() === currentQuestion.rightAnswer){
-  //         currentQuestionNumber++;
-  //         currentQuestionNumberIt++;
-  //         console.log(currentQuestionNumber);
-  //         showQuestion(currentQuestionNumber);
-  //       }
-  //     });
-  //
-  //
-  //
-  //
-  //
-  //     $('.question-word-order-template').show();
-  //   }
-  //   return $template;
-  // }
+  function showQuestionWordOrder(currentQuestion){
+    console.log('word-order', $('.question-word-order-template'));
+    // console.log('word order question', currentQuestion);
+    const $template = $('.question-word-order-template');
+    $template.find('.instructions').text(currentQuestion.question);
+    $template.find('.button').text(currentQuestion.buttontext);
+    // generate number of buttons depending on array length
+    const arrayOfWords = currentQuestion.rightAnswer.split(' ');
+    shuffleArray(arrayOfWords);
+    console.log(arrayOfWords);
+    for(let i = 0; i < arrayOfWords.length ; i++) {
+      const $button = $(`<button class="button is-medium">${arrayOfWords[i]}</button>`);
+      $template.find('.words').append($button);
+      $($button).on('click', function(){
+        $('#droparea').append(`<button class="button is-medium word-answer inline-block">${$(this).text()}</button>`);
+      });
+    }
+
+    $('#droparea').on('click','.word-answer' , function(){
+      console.log('hi')
+      $(this).remove()
+    });
+
+    $('.checkbutton').on('click', function(){
+      wordsAnswer = $('#droparea .word-answer').map((i, word) => $(word).text()).get();
+      if(wordsAnswer.join(" ") === currentQuestion.rightAnswer){
+        $('.answer-modal p').text(currentQuestion.correctModal);
+        $('.answer-modal button').text(currentQuestion.correctModalButton);
+
+      } else{
+        $('.answer-modal p').text(currentQuestion.incorrectModal);
+        $('.answer-modal button').text(currentQuestion.incorrectModalButton);
+      }
+      $('.answer-modal').show();
+      $('.close-modal').on('click', function(){
+        $('.answer-modal').hide();
+        if(wordsAnswer.text() === currentQuestion.rightAnswer){
+          currentQuestionNumber++;
+          currentQuestionNumberIt++;
+          console.log(currentQuestionNumber);
+          showQuestion(currentQuestionNumber);
+        }
+      });
+    })
+
+    $('.question-word-order-template').show();
+    return $template;
+  }
 
 
 });
