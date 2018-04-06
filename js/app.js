@@ -9,7 +9,7 @@ function shuffleArray(array) {
 
 $(function(){
 
-  let currentQuestionNumber = 3;
+  let currentQuestionNumber = 0;
   const $imagefr = $('.imagefr');
   let choice = null;
   let language = null;
@@ -237,7 +237,7 @@ $(function(){
 
     $('.checkbutton').on('click', function(){
       wordsAnswer = $('#droparea .word-answer').map((i, word) => $(word).text()).get();
-      if(wordsAnswer.join('') === currentQuestion.rightAnswer){
+      if(wordsAnswer.join(' ') === currentQuestion.rightAnswer){
         $('.answer-modal p').text(currentQuestion.correctModal);
         $('.answer-modal button').text(currentQuestion.correctModalButton);
 
