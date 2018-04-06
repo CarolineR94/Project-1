@@ -35,6 +35,12 @@ $body-background-color: $background-complement;
 
 .card{
   margin: 20% 0;
+
+  .card-footer {
+    border: 3px solid $seablue;
+    border-radius: $radius-large;
+    background-color: $complement;
+  }
 }
 
 p.is-size-2{
@@ -42,15 +48,10 @@ p.is-size-2{
   text-align: center;
 }
 
-.card-footer{
-  border: 3px solid $seablue;
-  border-radius: $radius-large;
-  background-color: $complement;
-}
 
 .button{
   background-color: $complement;
-
+  border: 3px solid $seablue;
 }
 
 .box {
@@ -59,6 +60,7 @@ p.is-size-2{
 }
 
 #droparea{
+  background-color: $complement;
   border: 1px solid $seablue;
 }
 
@@ -69,14 +71,6 @@ p.is-size-2{
   }
 }
 
-.button{
-  border: 3px solid $seablue;
-}
-
-
-#droparea{
-  background-color: #F7F7DF;
-}
 
 
 // animation

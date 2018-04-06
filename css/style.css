@@ -6437,34 +6437,29 @@ label.panel-block {
 
 .card {
   margin: 20% 0; }
+  .card .card-footer {
+    border: 3px solid #006E90;
+    border-radius: 5px;
+    background-color: #F7F7DF; }
 
 p.is-size-2 {
   width: 100%;
   text-align: center; }
 
-.card-footer {
-  border: 3px solid #006E90;
-  border-radius: 5px;
-  background-color: #F7F7DF; }
-
 .button {
-  background-color: #F7F7DF; }
+  background-color: #F7F7DF;
+  border: 3px solid #006E90; }
 
 .box {
   border: 6px solid #006E90;
   margin: 5%; }
 
 #droparea {
+  background-color: #F7F7DF;
   border: 1px solid #006E90; }
 
 .question-image-template .choiceimage {
   padding: 20px; }
-
-.button {
-  border: 3px solid #006E90; }
-
-#droparea {
-  background-color: #F7F7DF; }
 
 .swing-in-top-fwd {
   -webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
