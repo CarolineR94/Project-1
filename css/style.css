@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,900");
-/* add your customization here... */
 /*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -6429,38 +6428,6 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
-.modal-content {
-  margin: 20%; }
-
-#firstpagebox {
-  margin: 5%; }
-
-.card {
-  margin: 20% 0; }
-  .card .card-footer {
-    border: 3px solid #006E90;
-    border-radius: 5px;
-    background-color: #F7F7DF; }
-
-p.is-size-2 {
-  width: 100%;
-  text-align: center; }
-
-.button {
-  background-color: #F7F7DF;
-  border: 3px solid #006E90; }
-
-.box {
-  border: 6px solid #006E90;
-  margin: 5%; }
-
-#droparea {
-  background-color: #F7F7DF;
-  border: 1px solid #006E90; }
-
-.question-image-template .choiceimage {
-  padding: 20px; }
-
 .swing-in-top-fwd {
   -webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
@@ -6581,5 +6548,36 @@ p.is-size-2 {
     -webkit-transform-origin: left;
     transform-origin: left;
     opacity: 1; } }
+.modal-content {
+  margin: 20%; }
+
+#firstpagebox {
+  margin: 5%; }
+
+.card {
+  margin: 20% 0; }
+  .card .card-footer {
+    border: 3px solid #006E90;
+    border-radius: 5px;
+    background-color: #F7F7DF; }
+
+p.is-size-2 {
+  width: 100%;
+  text-align: center; }
+
+.button {
+  background-color: #F7F7DF;
+  border: 3px solid #006E90; }
+
+.box {
+  border: 6px solid #006E90;
+  margin: 5%; }
+
+#droparea {
+  background-color: #F7F7DF;
+  border: 1px solid #006E90; }
+
+.question-image-template .choiceimage {
+  padding: 20px; }
 
 /*# sourceMappingURL=style.css.map */
