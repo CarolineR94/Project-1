@@ -1,4 +1,6 @@
-https://caroliner94.github.io/Project-1/
+## Languages Game
+
+View site: https://caroliner94.github.io/Project-1/
 
 ### Aim:
 to create a web game as a first project on the GA WDI course.
