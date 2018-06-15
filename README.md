@@ -6,14 +6,16 @@ View site: https://caroliner94.github.io/Project-1/
 to create a web game as a first project on the GA WDI course.
 
 ### Technologies used:
-* HTML5 + HTML5 Audio
+* HTML5 & HTML5 Audio
 * SCSS
-* Javascript (ECMAScript 6) + jQuery
-* Git
-* Github
+* Bulma
+* Javascript (ECMAScript 6) & jQuery
+* Git & GitHub
 
 ### The Game:
 The game is a language learning game. Users can select either French or Italian on the starting page, and will be taken through a series of questions in different formats.
+
+![Image of game](images/project1-screenshot.png)
 
 ### The process:
 1. Once I had decided on the game, I started by considering the structure. I sketched out the sequence of screens for the path taken from the click on the French flag.
